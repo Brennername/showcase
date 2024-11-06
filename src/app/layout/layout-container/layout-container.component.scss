@@ -1,0 +1,80 @@
+@import '../../../variables.scss';
+
+.layout-container {
+  
+  
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  border: 1px solid #777;
+  width: calc(100vw - 90px);
+   height: calc(100vh - 90px);
+   overflow: auto;
+   
+}
+
+.header {
+  display: flex;
+  background-color: $primary-color;
+  color: $text-color;
+  padding: 20px;
+  
+  
+}
+
+.leftbar {
+//  background-color: $secondary-color;
+  color: $text-color;
+  min-width: 200px;
+  
+//   height: 100%;
+  display: flex;
+  background-color: #5456fc77;
+  
+}
+.router-pane
+{
+  background-color: white;
+  color: black;
+  width: 100%;
+ height: 100%;
+
+  
+}
+.router
+{
+ 
+}
+.content
+{
+  
+display: flex;
+flex: 1;
+color: black;
+overflow: auto;
+}
+.rightbar
+{
+display: flex;
+background: #6b6b6b59;
+color: $text-color;
+padding: 20px;
+flex: 0 0 200px;
+width: 200px;
+}
+.footer {
+display: flex;
+    background-color: $primary-color;
+  color: $text-color;
+  padding: 20px;
+  text-align: center;
+  justify-content: center;
+}
+.leftbar-container
+{
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 auto;
+    border-radius: 10px;
+    height: fit-content;
+}

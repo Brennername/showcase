@@ -1,0 +1,16 @@
+.leftbar-container
+{
+  padding: 15px;
+    display: flex;
+}
+a
+{
+  border-radius: 5px;
+  font-size: 18pt;
+  padding: 10px;
+  
+}
+a:hover{
+  background: linear-gradient(to bottom, #777777cc, #77777750, #777);
+  cursor: pointer;
+}
