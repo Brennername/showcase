@@ -1,16 +1,19 @@
 .leftbar-container
 {
-  padding: 15px;
-    display: flex;
+
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(to bottom, #7777776b, #c9c8cf2c, #d2d3da3b,  #7777776b); 
 }
 a
 {
-  border-radius: 5px;
+  // border-radius: 15px;
   font-size: 18pt;
   padding: 10px;
   
 }
 a:hover{
-  background: linear-gradient(to bottom, #777777cc, #77777750, #777);
+  background: linear-gradient(to right, #7777776b, #c9c8cf2c, #8f9cff96,  #ffffff8a,  #ffffff);
   cursor: pointer;
 }
