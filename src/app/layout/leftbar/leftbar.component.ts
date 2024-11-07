@@ -10,6 +10,7 @@ import { Router, } from '@angular/router';
   styleUrl: './leftbar.component.scss'
 })
 export class LeftbarComponent {
+
   
   constructor(@Inject(Router)   
   private router: Router)
@@ -31,5 +32,8 @@ export class LeftbarComponent {
   navigateToContact() 
   {
     this.router.navigate(['contact']);
+  }
+  navigateToCoreDump() {
+    this.router.navigate(['coredump']);
   }
 }
