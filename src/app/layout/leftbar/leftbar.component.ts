@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, Inject } from '@angular/core';
+import { Router, } from '@angular/router';
+
 
 @Component({
   selector: 'app-leftbar',
@@ -9,10 +10,11 @@ import { Router } from '@angular/router';
   styleUrl: './leftbar.component.scss'
 })
 export class LeftbarComponent {
-
-  constructor(private router: Router)
+  
+  constructor(@Inject(Router)   
+  private router: Router)
   {
-    
+    this.router = router;
   }
   navigateToHome()
   {

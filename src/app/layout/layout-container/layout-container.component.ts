@@ -4,7 +4,10 @@ import { LeftbarComponent } from "../leftbar/leftbar.component";
 import { HeaderComponent } from "../header/header.component";
 import { RightbarComponent } from "../rightbar/rightbar.component";
 import { ContentComponent } from "../content/content.component";
+import { routes } from '../../app.routes';
 import { RouterOutlet } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-layout-container',
