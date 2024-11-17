@@ -11,29 +11,42 @@ import { Router, } from '@angular/router';
 })
 export class LeftbarComponent {
 
-  
-  constructor(@Inject(Router)   
+
+
+  constructor(@Inject(Router)
   private router: Router)
   {
     this.router = router;
   }
+
+  navTo(route: string)
+  {
+    this.router.navigate([route]);
+  }
+
+
+
   navigateToHome()
   {
     this.router.navigate(['/home']);
   }
   navigateToAboutMe()
   {
-    this.router.navigate(['aboutme']);
+    this.router.navigate(['/aboutme']);
   }
-  navigateToProjects() 
+  navigateToProjects()
   {
-    this.router.navigate(['projects']);
+    this.router.navigate(['/projects']);
   }
-  navigateToContact() 
+  navigateToBlog()
   {
-    this.router.navigate(['contact']);
+    this.router.navigate(['/blog']);
+  }
+  navigateToContact()
+  {
+    this.router.navigate(['/contact']);
   }
   navigateToCoreDump() {
-    this.router.navigate(['coredump']);
+    this.router.navigate(['/coredump']);
   }
 }

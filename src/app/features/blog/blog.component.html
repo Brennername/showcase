@@ -1,0 +1,17 @@
+<div class="rounding-box">
+<div class="blog-container">
+  <h1 class="blog-title">Welcome to My Blog!</h1>
+
+  <div class="post-container" *ngFor="let post of posts">
+    <h2 class="post-title">{{ post.title }}</h2>
+    <p class="post-content">{{ post.content }}</p>
+    <p class="post-date">{{ post.date}}</p>
+    <div class="post-actions">
+      <i class="post-action-icon fa fa-comment"></i>
+      <i class="post-action-icon fa fa-thumbs-up"></i>
+      <i class="post-action-icon fa fa-thumbs-down"></i>
+    </div>
+  </div>
+</div>
+</div>
+<div class="filler-box">&nbsp;</div>

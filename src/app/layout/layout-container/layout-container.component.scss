@@ -1,8 +1,8 @@
 @import '../../../variables.scss';
 
 .layout-container {
-  
-  
+
+
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -10,7 +10,8 @@
   width: calc(100vw - 90px);
    height: calc(100vh - 90px);
    overflow: auto;
-   
+
+
 }
 
 .header {
@@ -18,19 +19,19 @@
   background-color: $primary-color;
   color: $text-color;
   width: 100%;
-  
-  
+
+
 }
 
 .leftbar {
 //  background-color: $secondary-color;
   color: $text-color;
   min-width: 200px;
-  
+
 //   height: 100%;
   display: flex;
   background-color: #5456fc77;
-  
+
 }
 .router-pane
 {
@@ -39,15 +40,15 @@
   width: 100%;
  height: 100%;
 
-  
+
 }
 .router
 {
- 
+
 }
 .content
 {
-  
+
 display: flex;
 flex: 1;
 color: black;
@@ -70,7 +71,7 @@ display: flex;
   text-align: center;
   justify-content: center;
   flex-direction: row;
-  
+
 }
 .leftbar-container
 {
@@ -79,6 +80,6 @@ display: flex;
     flex: 1 0 auto;
     border-radius: 10px;
     height: 100%;
-    
+
 
 }

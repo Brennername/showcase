@@ -6,13 +6,16 @@ import { ProjectsComponent } from './features/projects/projects.component';
 import { HomeComponent } from './features/home/home.component';
 import { ContactComponent } from './features/contact/contact.component';
 import { CoreDumpComponent } from './features/core-dump/core-dump.component';
+import { BlogComponent } from './features/blog/blog.component';
+import { GoFundMeComponent } from './features/go-fund-me/go-fund-me.component';
 
 export const routes: Routes = [
     {path: '', component: HomeComponent},
     {path: 'home', component: HomeComponent},
     {path: 'aboutme', component: AboutMeComponent},
     {path: 'projects', component: ProjectsComponent},
+    {path: 'blog', component: BlogComponent},
     {path: 'contact', component: ContactComponent},
     {path: 'coredump', component: CoreDumpComponent},
-    
+    {path: 'gofundme', component: GoFundMeComponent}
 ];
