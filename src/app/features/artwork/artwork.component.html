@@ -1,0 +1,9 @@
+<div class="image-gallery">
+  <!-- <img *ngFor="let image of sanitizedImages" [src]="image" alt="Artwork"> -->
+  @for (image of sanitizedImages; track image)
+  {
+  <!-- <img [innerHTML]="image" alt="image"/> -->
+  <!-- {{image}} -->
+   <p>{{image}}</p>
+  }
+</div>
