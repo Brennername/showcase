@@ -1,85 +1,52 @@
 @import '../../../variables.scss';
-
 .layout-container {
-
-
   display: flex;
   flex-direction: column;
   border-radius: 10px;
   border: 1px solid #777;
   width: calc(100vw - 90px);
-   height: calc(100vh - 90px);
-   overflow: auto;
-
-
+  height: calc(100vh - 90px);
+  overflow: auto;
 }
 
-.header {
+.header, .footer {
   display: flex;
   background-color: $primary-color;
   color: $text-color;
   width: 100%;
+}
 
+.content {
+  display: flex;
+
+  overflow: auto;
+}
+
+.leftbar-container {
+  display: flex;
+  flex-direction: row;
+
+  border-radius: 10px;
+  height: 100%;
 
 }
 
 .leftbar {
-//  background-color: $secondary-color;
-  color: $text-color;
-  min-width: 200px;
-
-//   height: 100%;
-  display: flex;
   background-color: #5456fc77;
-
+  color: $text-color;
+  flex: 0 0 200px; /* Flex to fill available space */
 }
-.router-pane
-{
+
+.router-pane {
   background-color: white;
   color: black;
-  width: 100%;
- height: 100%;
-
-
+  flex: 1; /* Flex to fill available space */
+  flex: 1 1 10px;
 }
-.router
-{
 
-}
-.content
-{
-
-display: flex;
-flex: 1;
-color: black;
-overflow: auto;
-}
-.rightbar
-{
-display: flex;
-background: #6b6b6b59;
-color: $text-color;
-padding: 20px;
-flex: 0 0 200px;
-width: 200px;
-}
-.footer {
-display: flex;
-    background-color: $primary-color;
+.rightbar {
+  background: #6b6b6b59;
   color: $text-color;
- align-items: stretch;
-  text-align: center;
-  justify-content: center;
-  flex-direction: row;
-
-}
-.leftbar-container
-{
-    display: flex;
-    flex-direction: row;
-    flex: 1 0 auto;
-    border-radius: 10px;
-    height: 100%;
-
-
+  padding: 20px;
+  flex: 1;
 }
