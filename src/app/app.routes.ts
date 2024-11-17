@@ -14,8 +14,9 @@ export const routes: Routes = [
     {path: 'home', component: HomeComponent},
     {path: 'aboutme', component: AboutMeComponent},
     {path: 'projects', component: ProjectsComponent},
-    {path: 'blog', component: BlogComponent},
+
     {path: 'contact', component: ContactComponent},
+    {path: 'gofundme', component: GoFundMeComponent},
     {path: 'coredump', component: CoreDumpComponent},
-    {path: 'gofundme', component: GoFundMeComponent}
+
 ];
