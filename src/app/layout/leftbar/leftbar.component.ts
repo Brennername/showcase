@@ -11,6 +11,12 @@ import { Router, } from '@angular/router';
 })
 export class LeftbarComponent {
 
+  menuVisible = false;
+
+  toggleMenu() {
+    this.menuVisible = !this.menuVisible;
+  }
+
 
 
   constructor(@Inject(Router)

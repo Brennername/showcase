@@ -1,13 +1,16 @@
-<div class="leftbar-container vbox">
-    <a (click)="navTo('home');">Home</a>
-    <a (click)="navTo('aboutme');">About Me</a>
-    <a (click)="navTo('projects');">Projects</a>
-    <!-- <a (click)="navTo('blog');">Blog</a> -->
-    <!-- <a (click)="navTo('artwork');">Artwork</a> -->
-    <a (click)="navTo('contact');">Contact</a>
-    <a (click)="navTo('gofundme');">Crowd Funding</a>
-    <a (click)="navTo('coredump');">Core Dump</a>
+<div class="leftbar-container-wrapper">
+    <div class="hamburger-icon" (click)="toggleMenu()">☰</div>
+    <div class="leftbar-container vbox" [class.show]="menuVisible">
+        <a (click)="navTo('home');">Home</a>
+        <a (click)="navTo('aboutme');">About Me</a>
+        <a (click)="navTo('projects');">Projects</a>
+        <!-- <a (click)="navTo('blog');">Blog</a> -->
+        <!-- <a (click)="navTo('artwork');">Artwork</a> -->
+        <a (click)="navTo('contact');">Contact</a>
+        <a (click)="navTo('gofundme');">Crowd Funding</a>
+        <a (click)="navTo('coredump');">Core Dump</a>
 
 
 
+    </div>
 </div>
