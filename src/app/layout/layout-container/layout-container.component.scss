@@ -7,6 +7,16 @@
   width: calc(100vw - 90px);
   height: calc(100vh - 90px);
   overflow: auto;
+  max-width: 100vw;
+}
+
+@media (max-width: 768px) {
+  .layout-container {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+    border: none;
+  }
 }
 
 .header, .footer {
@@ -34,7 +44,15 @@
 .leftbar {
   background-color: #5456fc77;
   color: $text-color;
-  flex: 0 0 200px; /* Flex to fill available space */
+  flex: 0 0 200px;
+}
+
+@media (max-width: 768px) {
+  .leftbar {
+    position: absolute;
+    flex: none;
+    width: 0;
+  }
 }
 
 .router-pane {

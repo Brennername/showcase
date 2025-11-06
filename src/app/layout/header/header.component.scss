@@ -1,25 +1,39 @@
-.headshot
-{
+.headshot {
     height: 150px;
     width: 150px;
     border-radius: 50%;
     border: 1px solid black;
     box-shadow: 3px 3px 16px black;
 }
-.header-container
-{
+
+.header-container {
     padding: 20px;
-    width: 100vw;
+    width: 100%;
     background: repeating-linear-gradient(to right, #7777776b, #7777772c, #0b13867a);
     align-items: center;
-
+    box-sizing: border-box;
 }
-h1
-{
+
+h1 {
     text-shadow: 6px 6px 8px rgba(14, 0, 90, 0.664);
 }
-a
-{
-    color: #777;
 
+a {
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .headshot {
+        height: 80px;
+        width: 80px;
+    }
+
+    .header-container {
+        padding: 15px;
+        padding-left: 70px;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
 }

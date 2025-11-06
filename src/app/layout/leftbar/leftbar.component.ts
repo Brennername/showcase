@@ -28,6 +28,7 @@ export class LeftbarComponent {
   navTo(route: string)
   {
     this.router.navigate([route]);
+    this.menuVisible = false;
   }
 
 
