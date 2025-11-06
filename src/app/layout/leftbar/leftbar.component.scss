@@ -6,17 +6,22 @@
 .hamburger-icon {
   display: none;
   position: fixed;
-  top: 20px;
-  left: 20px;
-  font-size: 32px;
+  top: 15px;
+  left: 15px;
+  font-size: 28px;
   color: white;
   cursor: pointer;
   z-index: 1001;
-  padding: 10px;
-  background: rgba(11, 19, 134, 0.9);
+  padding: 8px 12px;
+  background: transparent;
   border-radius: 5px;
-  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
   user-select: none;
+  transition: transform 0.2s ease;
+}
+
+.hamburger-icon:hover {
+  transform: scale(1.1);
 }
 
 .leftbar-container {
@@ -25,6 +30,7 @@
   height: 100%;
   background: repeating-linear-gradient(to bottom, #7777776b, #7777772c, #0b13867a);
   text-shadow: 3px 3px 3px rgba(14, 0, 90, 0.664);
+  padding-top: 0;
 }
 
 a {
@@ -75,8 +81,10 @@ a:hover {
     height: 100vh;
     z-index: 1000;
     transition: left 0.3s ease-in-out;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
     overflow-y: auto;
+    background: rgba(11, 19, 134, 0.95);
+    padding-top: 60px;
   }
 
   .leftbar-container.show {
