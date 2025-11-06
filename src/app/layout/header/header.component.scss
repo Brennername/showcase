@@ -12,6 +12,7 @@
     background: repeating-linear-gradient(to right, #7777776b, #7777772c, #0b13867a);
     align-items: center;
     box-sizing: border-box;
+    position: relative;
 }
 
 h1 {
@@ -22,7 +23,31 @@ a {
     color: #777;
 }
 
+.hamburger-icon {
+    display: none;
+}
+
 @media (max-width: 768px) {
+    .hamburger-icon {
+        display: block;
+        position: absolute;
+        left: 15px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        z-index: 1001;
+        padding: 8px 12px;
+        background: transparent;
+        border-radius: 5px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        user-select: none;
+        transition: transform 0.2s ease;
+    }
+
+    .hamburger-icon:hover {
+        transform: scale(1.1);
+    }
+
     .headshot {
         height: 60px;
         width: 60px;

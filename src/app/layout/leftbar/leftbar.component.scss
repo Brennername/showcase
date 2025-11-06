@@ -3,27 +3,6 @@
   height: 100%;
 }
 
-.hamburger-icon {
-  display: none;
-  position: absolute;
-  top: 15px;
-  left: 15px;
-  font-size: 28px;
-  color: white;
-  cursor: pointer;
-  z-index: 1001;
-  padding: 8px 12px;
-  background: transparent;
-  border-radius: 5px;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  user-select: none;
-  transition: transform 0.2s ease;
-}
-
-.hamburger-icon:hover {
-  transform: scale(1.1);
-}
-
 .leftbar-container {
   display: flex;
   width: 100%;
@@ -65,10 +44,6 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  .hamburger-icon {
-    display: block;
-  }
-
   .backdrop {
     display: block;
   }

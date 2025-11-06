@@ -1,11 +1,11 @@
 <div class="layout-container">
     <div class="vbox">
-        <app-header class="header"></app-header>
+        <app-header class="header" (menuToggle)="toggleLeftbarMenu()"></app-header>
         <div class="vbox">
 
             <div class="leftbar-container">
-            
-                <app-leftbar class="leftbar"></app-leftbar>
+
+                <app-leftbar class="leftbar" #leftbar></app-leftbar>
             
             
                 <!-- <app-content class="content"></app-content> -->

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { FooterComponent } from "../footer/footer.component";
 import { LeftbarComponent } from "../leftbar/leftbar.component";
 import { HeaderComponent } from "../header/header.component";
@@ -17,5 +17,9 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './layout-container.component.scss'
 })
 export class LayoutContainerComponent {
+  @ViewChild('leftbar') leftbar!: LeftbarComponent;
 
+  toggleLeftbarMenu() {
+    this.leftbar.toggleMenu();
+  }
 }
