@@ -5,11 +5,10 @@ import { CommonModule } from '@angular/common';
 
 
 @Component({
-  selector: 'app-blog',
-  standalone: true,
-  imports: [CommonModule],
-  templateUrl: './blog.component.html',
-  styleUrl: './blog.component.scss'
+    selector: 'app-blog',
+    imports: [CommonModule],
+    templateUrl: './blog.component.html',
+    styleUrl: './blog.component.scss'
 })
 export class BlogComponent implements OnInit {
   posts: BlogPost[] = [];

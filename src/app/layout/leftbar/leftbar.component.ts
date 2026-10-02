@@ -7,11 +7,10 @@ export interface NavItem {
 }
 
 @Component({
-  selector: 'app-leftbar',
-  standalone: true,
-  imports: [RouterLink, RouterLinkActive],
-  templateUrl: './leftbar.component.html',
-  styleUrl: './leftbar.component.scss'
+    selector: 'app-leftbar',
+    imports: [RouterLink, RouterLinkActive],
+    templateUrl: './leftbar.component.html',
+    styleUrl: './leftbar.component.scss'
 })
 export class LeftbarComponent {
   private readonly router = inject(Router);
