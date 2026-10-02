@@ -1,34 +1,78 @@
 <header class="header-container">
-  <div class="header-left">
-    <button class="hamburger-btn" (click)="toggleMenu()" aria-label="Toggle navigation menu" type="button">
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-      <span class="hamburger-bar"></span>
-    </button>
-    
-    <a routerLink="/" class="branding-link">
-      <img class="headshot" src="/assets/headshot.jpeg" alt="Daniel Remsburg headshot" />
-      <div class="branding-text">
-        <span class="site-title">Daniel Remsburg</span>
-        <span class="site-subtitle">Full-Stack Engineer</span>
-      </div>
-    </a>
+  <div class="header-inner">
+    <div class="header-left">
+      <a routerLink="/" class="branding-link" (click)="closeMenu()">
+        <img class="headshot" src="/assets/headshot.jpeg" alt="Daniel Remsburg headshot" />
+        <div class="branding-text">
+          <span class="site-title">Daniel Remsburg</span>
+          <span class="site-subtitle">Full-Stack Engineer</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Desktop Navigation Bar inside Header -->
+    <nav class="desktop-nav" aria-label="Main Navigation">
+      <ul class="nav-list-desktop">
+        @for (item of navItems; track item.path) {
+          <li>
+            <a 
+              [routerLink]="item.path" 
+              routerLinkActive="active"
+              class="nav-link-desktop">
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+
+    <div class="header-right">
+      <button 
+        class="theme-toggle-btn" 
+        (click)="toggleTheme()" 
+        [title]="'Switch to ' + (themeService.currentTheme() === 'dark' ? 'Light' : 'Dark') + ' Mode'"
+        aria-label="Toggle color theme"
+        type="button">
+        @if (themeService.currentTheme() === 'dark') {
+          <span class="theme-icon light-icon" aria-hidden="true">&#9788;</span>
+          <span class="theme-label">Light</span>
+        } @else {
+          <span class="theme-icon dark-icon" aria-hidden="true">&#9790;</span>
+          <span class="theme-label">Dark</span>
+        }
+      </button>
+
+      <!-- Mobile Hamburger Button -->
+      <button 
+        class="hamburger-btn" 
+        (click)="toggleMenu()" 
+        [attr.aria-expanded]="menuOpen()" 
+        aria-label="Toggle navigation menu" 
+        type="button">
+        <span class="hamburger-bar" [class.open]="menuOpen()"></span>
+        <span class="hamburger-bar" [class.open]="menuOpen()"></span>
+        <span class="hamburger-bar" [class.open]="menuOpen()"></span>
+      </button>
+    </div>
   </div>
 
-  <div class="header-actions">
-    <button 
-      class="theme-toggle-btn" 
-      (click)="toggleTheme()" 
-      [title]="'Switch to ' + (themeService.currentTheme() === 'dark' ? 'Light' : 'Dark') + ' Mode'"
-      aria-label="Toggle color theme"
-      type="button">
-      @if (themeService.currentTheme() === 'dark') {
-        <span class="theme-icon light-icon" aria-hidden="true">&#9788;</span>
-        <span class="theme-label">Light</span>
-      } @else {
-        <span class="theme-icon dark-icon" aria-hidden="true">&#9790;</span>
-        <span class="theme-label">Dark</span>
-      }
-    </button>
-  </div>
+  <!-- Mobile Backdrop & Drawer Menu -->
+  @if (menuOpen()) {
+    <div class="mobile-backdrop" (click)="closeMenu()" aria-hidden="true"></div>
+    <nav class="mobile-drawer" aria-label="Mobile Navigation">
+      <ul class="nav-list-mobile">
+        @for (item of navItems; track item.path) {
+          <li>
+            <a 
+              [routerLink]="item.path" 
+              routerLinkActive="active" 
+              (click)="closeMenu()"
+              class="nav-link-mobile">
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ul>
+    </nav>
+  }
 </header>

@@ -1,12 +1,9 @@
 <div class="layout-wrapper">
-  <app-header class="app-header" (menuToggle)="toggleLeftbarMenu()"></app-header>
+  <app-header class="app-header"></app-header>
   
-  <div class="main-body-container">
-    <app-leftbar class="app-sidebar" #leftbar></app-leftbar>
-    <main class="content-pane" id="main-content">
-      <router-outlet></router-outlet>
-    </main>
-  </div>
+  <main class="content-pane" id="main-content">
+    <router-outlet></router-outlet>
+  </main>
 
   <app-footer class="app-footer"></app-footer>
 </div>

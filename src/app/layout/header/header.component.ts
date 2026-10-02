@@ -1,19 +1,39 @@
-import { Component, Output, EventEmitter, inject } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ThemeService } from '../../theme.service';
 
+export interface NavItem {
+  readonly path: string;
+  readonly label: string;
+}
+
 @Component({
-    selector: 'app-header',
-    imports: [RouterLink],
-    templateUrl: './header.component.html',
-    styleUrl: './header.component.scss'
+  selector: 'app-header',
+  imports: [RouterLink, RouterLinkActive],
+  templateUrl: './header.component.html',
+  styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   readonly themeService = inject(ThemeService);
-  @Output() menuToggle = new EventEmitter<void>();
+
+  readonly menuOpen = signal(false);
+
+  readonly navItems: readonly NavItem[] = [
+    { path: '/home', label: 'Home' },
+    { path: '/aboutme', label: 'About Me' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/artwork', label: 'Artwork' },
+    { path: '/contact', label: 'Contact' },
+    { path: '/gofundme', label: 'Crowdfunding' },
+    { path: '/coredump', label: 'Core Dump' }
+  ];
 
   toggleMenu(): void {
-    this.menuToggle.emit();
+    this.menuOpen.update(v => !v);
+  }
+
+  closeMenu(): void {
+    this.menuOpen.set(false);
   }
 
   toggleTheme(): void {
