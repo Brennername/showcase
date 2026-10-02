@@ -1,23 +1,40 @@
 import { Routes } from '@angular/router';
-import { LayoutContainerComponent } from './layout/layout-container/layout-container.component';
-import { ContentComponent } from './layout/content/content.component';
-import { AboutMeComponent } from './features/about-me/about-me.component';
-import { ProjectsComponent } from './features/projects/projects.component';
-import { HomeComponent } from './features/home/home.component';
-import { ContactComponent } from './features/contact/contact.component';
-import { CoreDumpComponent } from './features/core-dump/core-dump.component';
-import { BlogComponent } from './features/blog/blog.component';
-import { GoFundMeComponent } from './features/go-fund-me/go-fund-me.component';
-import { ArtworkComponent } from './features/artwork/artwork.component';
 
 export const routes: Routes = [
-    {path: '', component: HomeComponent},
-    {path: 'home', component: HomeComponent},
-    {path: 'aboutme', component: AboutMeComponent},
-    {path: 'projects', component: ProjectsComponent},
-    {path: 'artwork', component: ArtworkComponent},
-    {path: 'contact', component: ContactComponent},
-    {path: 'gofundme', component: GoFundMeComponent},
-    {path: 'coredump', component: CoreDumpComponent},
-
+  {
+    path: '',
+    loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent)
+  },
+  {
+    path: 'home',
+    loadComponent: () => import('./features/home/home.component').then(m => m.HomeComponent)
+  },
+  {
+    path: 'aboutme',
+    loadComponent: () => import('./features/about-me/about-me.component').then(m => m.AboutMeComponent)
+  },
+  {
+    path: 'projects',
+    loadComponent: () => import('./features/projects/projects.component').then(m => m.ProjectsComponent)
+  },
+  {
+    path: 'artwork',
+    loadComponent: () => import('./features/artwork/artwork.component').then(m => m.ArtworkComponent)
+  },
+  {
+    path: 'contact',
+    loadComponent: () => import('./features/contact/contact.component').then(m => m.ContactComponent)
+  },
+  {
+    path: 'gofundme',
+    loadComponent: () => import('./features/go-fund-me/go-fund-me.component').then(m => m.GoFundMeComponent)
+  },
+  {
+    path: 'coredump',
+    loadComponent: () => import('./features/core-dump/core-dump.component').then(m => m.CoreDumpComponent)
+  },
+  {
+    path: '**',
+    redirectTo: ''
+  }
 ];
