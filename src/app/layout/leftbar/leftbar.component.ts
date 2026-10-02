@@ -23,7 +23,6 @@ export class LeftbarComponent {
     { path: '/projects', label: 'Projects' },
     { path: '/artwork', label: 'Artwork' },
     { path: '/contact', label: 'Contact' },
-    { path: '/gofundme', label: 'Crowdfunding' },
     { path: '/coredump', label: 'Core Dump' }
   ];
 

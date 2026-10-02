@@ -26,10 +26,6 @@ export const routes: Routes = [
     loadComponent: () => import('./features/contact/contact.component').then(m => m.ContactComponent)
   },
   {
-    path: 'gofundme',
-    loadComponent: () => import('./features/go-fund-me/go-fund-me.component').then(m => m.GoFundMeComponent)
-  },
-  {
     path: 'coredump',
     loadComponent: () => import('./features/core-dump/core-dump.component').then(m => m.CoreDumpComponent)
   },
