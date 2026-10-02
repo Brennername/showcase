@@ -1,11 +1,144 @@
-.go-fund-me-container
-{
-  margin-top: 25px;
-  margin-left: 25px;
-  width: 80%;
-  height: 100%;
+.crowdfunding-container {
+  display: flex;
+  justify-content: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
-p
-{
-  max-width: 400px;
+
+.project-hero-card {
+  width: 100%;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: var(--shadow-sm);
+
+  .badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    background-color: var(--badge-bg);
+    border: 1px solid var(--badge-border);
+    color: var(--primary-accent);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    margin: 0 0 1rem 0;
+    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    font-weight: 800;
+    color: var(--text-primary);
+  }
+
+  .project-summary {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin: 0 0 1.5rem 0;
+  }
+}
+
+.tech-stack-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.tech-chip {
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 0.35rem 0.7rem;
+  border-radius: var(--radius-full);
+}
+
+.action-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+
+  .card-info {
+    flex: 1;
+
+    h3 {
+      margin: 0 0 0.5rem 0;
+      font-size: 1.25rem;
+      color: var(--text-primary);
+    }
+
+    p {
+      margin: 0 0 1.25rem 0;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+  }
+
+  .qr-code-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+
+    .qr-image {
+      width: 140px;
+      height: 140px;
+      border-radius: var(--radius-sm);
+      background-color: white;
+      padding: 6px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .qr-caption {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      text-align: center;
+      max-width: 140px;
+    }
+  }
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-md);
+  background-color: var(--primary-accent);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  transition: all var(--transition-speed) ease;
+
+  &:hover {
+    background-color: var(--primary-accent-hover);
+    text-decoration: none;
+    transform: translateY(-2px);
+  }
+}
+
+@media (max-width: 700px) {
+  .action-card {
+    flex-direction: column-reverse;
+    text-align: center;
+
+    .card-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }
 }

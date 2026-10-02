@@ -1,9 +1,23 @@
-<div class="image-gallery">
-  <!-- <img *ngFor="let image of sanitizedImages" [src]="image" alt="Artwork"> -->
-  @for (image of sanitizedImages; track image)
-  {
-  <!-- <img [innerHTML]="image" alt="image"/> -->
-  <!-- {{image}} -->
-   <p>{{image}}</p>
-  }
-</div>
+<section class="gallery-container">
+  <div class="gallery-header">
+    <div class="badge">Visuals &amp; Schemas</div>
+    <h1>Artwork &amp; System Diagrams</h1>
+    <p class="subtitle">
+      A visual gallery featuring system architecture wireframes, database diagrams, and creative visual artwork.
+    </p>
+  </div>
+
+  <div class="gallery-grid">
+    @for (item of items(); track item.src) {
+      <figure class="gallery-card">
+        <div class="image-wrapper">
+          <img [src]="item.src" [alt]="item.title" loading="lazy" class="gallery-img" />
+        </div>
+        <figcaption class="card-caption">
+          <h3>{{ item.title }}</h3>
+          <p>{{ item.description }}</p>
+        </figcaption>
+      </figure>
+    }
+  </div>
+</section>

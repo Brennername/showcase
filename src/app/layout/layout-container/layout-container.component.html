@@ -1,22 +1,12 @@
-<div class="layout-container">
-    <div class="vbox">
-        <app-header class="header" (menuToggle)="toggleLeftbarMenu()"></app-header>
-        <div class="vbox">
+<div class="layout-wrapper">
+  <app-header class="app-header" (menuToggle)="toggleLeftbarMenu()"></app-header>
+  
+  <div class="main-body-container">
+    <app-leftbar class="app-sidebar" #leftbar></app-leftbar>
+    <main class="content-pane" id="main-content">
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 
-            <div class="leftbar-container">
-
-                <app-leftbar class="leftbar" #leftbar></app-leftbar>
-            
-            
-                <!-- <app-content class="content"></app-content> -->
-                <div class="router-pane"><router-outlet class="router"></router-outlet></div>
-
-
-            </div>
-        </div>
-        
-        <!-- 
-        <app-content></app-content><app-rightbar class="rightbar"></app-rightbar></div> -->
-        <app-footer class="footer"></app-footer>
-    </div>
+  <app-footer class="app-footer"></app-footer>
 </div>

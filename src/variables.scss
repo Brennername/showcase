@@ -1,20 +1,51 @@
-// Colors
-$primary-color: #002efa54;
-$secondary-color: #7575757e;
-$success-color: #287fa7;
-$danger-color: #dc3545;
-$warning-color: #ffc107;
-$info-color: #1a17b8;
-$light-color: #f8f9fa;
+/* Design System Variables and Tokens */
+:root {
+  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --radius-full: 9999px;
+  --transition-speed: 0.25s;
+  
+  /* Dark Theme Default */
+  --bg-page: #0a0e17;
+  --bg-surface: #111827;
+  --bg-surface-elevated: #1a2234;
+  --bg-header: rgba(17, 24, 39, 0.85);
+  --border-subtle: #243049;
+  --border-highlight: #3b82f6;
+  --text-primary: #f3f4f6;
+  --text-secondary: #9ca3af;
+  --text-muted: #6b7280;
+  --primary-accent: #3b82f6;
+  --primary-accent-hover: #60a5fa;
+  --badge-bg: rgba(59, 130, 246, 0.15);
+  --badge-border: rgba(59, 130, 246, 0.35);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 10px 30px rgba(0, 0, 0, 0.6);
+}
 
-$background: repeating-linear-gradient(to left, #0c44808c, #0c80808c, #0c80808c, #0c80808c, #0c80808c, #0c44804f);
-$dark-color: #0c44808c;
-$text-color: white;
+[data-theme='light'] {
+  --bg-page: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #f1f5f9;
+  --bg-header: rgba(255, 255, 255, 0.88);
+  --border-subtle: #e2e8f0;
+  --border-highlight: #2563eb;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --primary-accent: #2563eb;
+  --primary-accent-hover: #1d4ed8;
+  --badge-bg: rgba(37, 99, 235, 0.08);
+  --badge-border: rgba(37, 99, 235, 0.2);
+  --shadow-sm: 0 2px 4px rgba(15, 23, 42, 0.06);
+  --shadow-md: 0 4px 16px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 10px 30px rgba(15, 23, 42, 0.12);
+}
 
-// Typography
-$font-family-base: 'Helvetica Neue', 'Helvetica', Arial, sans-serif;
-$font-size-base: 16px;
-$line-height-base: 1.5;
-
-// Spacing
-$spacing-unit: 10px;
+// Legacy SCSS variables mapped to tokens
+$primary-color: var(--primary-accent);
+$text-color: var(--text-primary);
+$bg-color: var(--bg-page);

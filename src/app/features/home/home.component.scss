@@ -1,23 +1,145 @@
-.home-container
-{
+.home-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
 
+.hero-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-speed) ease;
+
+  &:hover {
+    border-color: var(--border-highlight);
+  }
 }
-.flex-row
-{
-    display: flex;
-    flex-direction: row;
+
+.hero-badge {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  background-color: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  color: var(--primary-accent);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
 }
-.flex-column
-{
-    display: flex;
+
+.hero-title {
+  margin: 0 0 1rem 0;
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 800;
+  color: var(--text-primary);
+  line-height: 1.25;
+}
+
+.hero-lead {
+  margin: 0 0 1.75rem 0;
+  font-size: clamp(1rem, 1.8vw, 1.15rem);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 800px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition-speed) ease;
+
+  &.btn-primary {
+    background-color: var(--primary-accent);
+    color: #ffffff;
+    border: 1px solid transparent;
+
+    &:hover {
+      background-color: var(--primary-accent-hover);
+      text-decoration: none;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-sm);
+    }
+  }
+
+  &.btn-secondary {
+    background-color: var(--bg-surface-elevated);
+    color: var(--text-primary);
+    border: 1px solid var(--border-subtle);
+
+    &:hover {
+      border-color: var(--primary-accent);
+      color: var(--primary-accent);
+      text-decoration: none;
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.core-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.pillar-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  transition: all var(--transition-speed) ease;
+
+  &:hover {
+    border-color: var(--border-highlight);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .pillar-icon {
+    font-size: 1.6rem;
+    color: var(--primary-accent);
+    margin-bottom: 0.75rem;
+  }
+
+  h3 {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.2rem;
+    color: var(--text-primary);
+  }
+
+  p {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-actions {
     flex-direction: column;
-}
-.danielremsburg_com
-{
-    margin-left: 100px;
-    margin-right: 100px;
-    width: 200px;
-    height: 200px;
-    border-radius: 15px;
-    align-self: center;
+    width: 100%;
+
+    .btn {
+      width: 100%;
+    }
+  }
 }

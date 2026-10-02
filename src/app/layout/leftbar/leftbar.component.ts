@@ -1,59 +1,38 @@
-import { Component, Inject } from '@angular/core';
-import { Router, } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 
+export interface NavItem {
+  readonly path: string;
+  readonly label: string;
+}
 
 @Component({
   selector: 'app-leftbar',
   standalone: true,
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './leftbar.component.html',
   styleUrl: './leftbar.component.scss'
 })
 export class LeftbarComponent {
+  private readonly router = inject(Router);
 
   menuVisible = false;
 
-  toggleMenu() {
+  readonly navItems: readonly NavItem[] = [
+    { path: '/home', label: 'Home' },
+    { path: '/aboutme', label: 'About Me' },
+    { path: '/projects', label: 'Projects' },
+    { path: '/artwork', label: 'Artwork' },
+    { path: '/contact', label: 'Contact' },
+    { path: '/gofundme', label: 'Crowdfunding' },
+    { path: '/coredump', label: 'Core Dump' }
+  ];
+
+  toggleMenu(): void {
     this.menuVisible = !this.menuVisible;
   }
 
-
-
-  constructor(@Inject(Router)
-  private router: Router)
-  {
-    this.router = router;
-  }
-
-  navTo(route: string)
-  {
-    this.router.navigate([route]);
+  closeMenu(): void {
     this.menuVisible = false;
-  }
-
-
-
-  navigateToHome()
-  {
-    this.router.navigate(['/home']);
-  }
-  navigateToAboutMe()
-  {
-    this.router.navigate(['/aboutme']);
-  }
-  navigateToProjects()
-  {
-    this.router.navigate(['/projects']);
-  }
-  navigateToBlog()
-  {
-    this.router.navigate(['/blog']);
-  }
-  navigateToContact()
-  {
-    this.router.navigate(['/contact']);
-  }
-  navigateToCoreDump() {
-    this.router.navigate(['/coredump']);
   }
 }

@@ -1,29 +1,14 @@
-import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { DomSanitizer } from '@angular/platform-browser';
+import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { ARTWORK_ITEMS, ArtItem } from './artwork.model';
 
 @Component({
   selector: 'app-artwork',
   standalone: true,
-  imports: [HttpClientModule],
+  imports: [CommonModule],
   templateUrl: './artwork.component.html',
-  styleUrl: './artwork.component.scss',
-  providers: [HttpClient]
+  styleUrl: './artwork.component.scss'
 })
-
-export class ArtworkComponent implements OnInit {
-  images: string[] = [];
-  sanitizedImages: any[] = [];
-
-  constructor(private sanitizer: DomSanitizer, private http: HttpClient) {}
-
-  ngOnInit() {
-    console.log("got here 1: " + this.http);
-    this.http.get('assets/artwork/', { responseType: 'text' })
-      .subscribe(response => {
-        const imageUrls = response.split('\n').filter(line => line.trim() !== '');
-        this.sanitizedImages = imageUrls.map(url => this.sanitizer.bypassSecurityTrustResourceUrl(`assets/artwork/${url}`));
-      });
-      console.log(this.sanitizedImages);
-  }
+export class ArtworkComponent {
+  readonly items = signal<readonly ArtItem[]>(ARTWORK_ITEMS);
 }

@@ -1,16 +1,36 @@
-<div class="projects-container padding-20px">
-    <h1>Projects</h1>
-    None of these projects are fully mature or have more than a few hours of work put into them, not much more than wireframes. They have been assembled for this showcase recently.
-    <ul>
-        <li><a href="https://github.com/Brennername/pdfutils/tree/master">PDFutils</a> - Java + Maven command line utility to extract x509 certs from PDFs.</li>
-        <li><a href="https://github.com/Brennername/menu-maker">Menu Maker</a> - Angular + Spring Boot application to build menus and requisitions for an institutional setting.</li>
-        <li><a href="https://github.com/Brennername/MsgToEmlConverter">MsgToEmlConverter</a> - Java + Maven command line utility to convert MSG to EML format.</li>
-        <li><a href="https://github.com/Brennername/showcase">This Showcase</a> - Angular + Node/Express.</li>
-        <!-- <li><a href="https://github.com/Brennername/complex-box">This Showcase</a> - Angular + Node/Express</li> -->
-         <li><a href="https://github.com/Brennername/tagebuch">TageBuch</a> - Vue + Vite Simple article feed for things such as a blog or side column.</li>
-         <li><a href="https://github.com/Brennername/ardour-collab">Ardour-Collab</a> - Angular + Vite + Node/Express OSC-controller for your Ardour DAW in a web interface.</li>
-        <li>More on the way.</li>
-    </ul>
+<section class="projects-container">
+  <div class="projects-header">
+    <div class="badge">Portfolio</div>
+    <h1>Featured Projects &amp; Architecture</h1>
+    <p class="subtitle">
+      A curated selection of tools, services, and applications showcasing full-stack systems design, protocol parsers, and modern reactive frontends.
+    </p>
+  </div>
 
+  <div class="projects-grid">
+    @for (project of projects(); track project.id) {
+      <article class="project-card">
+        <div class="card-top">
+          <div class="status-indicator">{{ project.status }}</div>
+          <a [href]="project.githubUrl" target="_blank" rel="noopener noreferrer" class="github-link" [title]="'View ' + project.title + ' on GitHub'">
+            <span class="github-icon">&#10132;</span> GitHub
+          </a>
+        </div>
 
-</div>
+        <h2 class="project-title">{{ project.title }}</h2>
+        <p class="project-description">{{ project.description }}</p>
+
+        <div class="architecture-block">
+          <span class="arch-label">Architecture Focus:</span>
+          <p class="arch-text">{{ project.architectureNote }}</p>
+        </div>
+
+        <div class="tech-tags">
+          @for (tag of project.tags; track tag) {
+            <span class="tag">{{ tag }}</span>
+          }
+        </div>
+      </article>
+    }
+  </div>
+</section>
